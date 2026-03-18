@@ -1,6 +1,6 @@
 ## Viko
 
-IT Developement student with a passion for everything awesome.
+I'm an IT Developement student with a passion for everything awesome.
 
 ---
 
@@ -11,7 +11,6 @@ IT Developement student with a passion for everything awesome.
 ### Former projects:
 - Created a website for visualisation of game statistics: [**smx2.573.no**](https://smx2.573.no)\
   	Shows statistics for game **StepManiaX**
-
 
 <!--
 **viko-w/viko-w** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
