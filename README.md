@@ -5,7 +5,7 @@ I'm an IT Developement student with a passion for everything awesome.
 ---
 
 ### Current projects:
-- Game developement in C++ using Vulcan
+- Game developement in C++ using Vulkan
 - Program that generates documents based on dynamic JSON data
 
 ### Former projects:
