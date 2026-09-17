@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const links = [
   { label: 'Home', href: '/' },
   { label: 'Projects', href: '/projects' },
@@ -8,11 +10,11 @@ const links = [
 function Navbar() {
   return (
     <nav className="navbar" aria-label="Main">
-      <a className="navbar-brand" href="/">Viko</a>
+      <NavLink className="navbar-brand" to="/">Viko</NavLink>
       <ul className="navbar-links">
         {links.map(({ label, href }) => (
           <li key={href}>
-            <a href={href}>{label}</a>
+            <NavLink to={href} end={href === '/'}>{label}</NavLink>
           </li>
         ))}
       </ul>

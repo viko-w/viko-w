@@ -1,42 +1,25 @@
-import { useEffect, useState } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './Navbar.jsx'
-import Markdown from './Markdown.jsx'
+import { Home, Projects, About, Contact, NotFound } from './pages/index.jsx'
 import './index.css'
 
 function App() {
-  const [content, setContent] = useState(null)
-  const [status, setStatus] = useState('loading')
-
-  useEffect(() => {
-    fetch('/README.md')
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.text()
-      })
-      .then((text) => {
-        if (!text.trim()) throw new Error('empty')
-        setContent(text)
-        setStatus('ready')
-      })
-      .catch(() => setStatus('error'))
-  }, [])
+  const location = useLocation()
 
   return (
     <div className="app">
       <a className="skip-link" href="#main">Skip to content</a>
       <Navbar />
       <main id="main">
-        {status === 'loading' && <p className="page-state">Loading readme…</p>}
-        {status === 'error' && (
-          <div className="empty-state">
-            <p className="empty-title">This page runs on <code>README.md</code></p>
-            <p>
-              Drop a <code>README.md</code> in <code>/viko</code> and this page
-              fills itself.
-            </p>
-          </div>
-        )}
-        {status === 'ready' && <Markdown>{content}</Markdown>}
+        <div className="page" key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </main>
       <footer className="footer">
         <p>© 2026 Viko</p>
