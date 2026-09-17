@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--nav-bg);
 }
 
 body {
@@ -214,5 +215,150 @@ section {
   from {
     opacity: 0;
     transform: translateY(12px);
+  }
+}
+
+/* below: additions for README-driven page (post-commit) */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+  scroll-margin-top: 5rem;
+}
+
+.page-state {
+  padding: 6rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-state {
+  max-width: 34rem;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid var(--hairline);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+}
+
+.markdown {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.markdown h1 {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  margin: 0 0 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.markdown h3 {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.markdown p {
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.markdown a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.markdown a:hover {
+  color: var(--accent-hover);
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 1rem 0;
+  padding-left: 1.75rem;
+}
+
+.markdown li {
+  margin: 0.35rem 0;
+}
+
+.markdown blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: #fafafc;
+  color: var(--text-muted);
+}
+
+.markdown blockquote p {
+  margin: 0.25rem 0;
+}
+
+.markdown hr {
+  margin: 2.5rem auto;
+  width: 4rem;
+  border: none;
+  border-top: 2px solid var(--hairline);
+}
+
+.markdown pre {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  overflow-x: auto;
+}
+
+.markdown pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.markdown code {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.375rem;
+  background: #f2f2f7;
+  border: 1px solid var(--hairline);
+  font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+  .markdown {
+    padding: 2rem 1.25rem 3rem;
   }
 }
